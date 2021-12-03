@@ -10,7 +10,8 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:palette.replace"
+		"onCommand:palette.replace",
+		"onCommand:palette.convert"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -18,6 +19,10 @@
 			{
 				"command": "palette.replace",
 				"title": "Palette Matcher: Replace selected color with one in palette"
+			},
+			{
+				"command": "palette.convert",
+				"title": "Palette Matcher: Convert color"
 			}
 		],
 		"configuration": {

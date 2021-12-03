@@ -2,6 +2,25 @@ import * as chroma from 'chroma-js';
 import * as _ from 'lodash';
 
 export class Utils {
+  static convertColor(color: string) {
+    const rgbArray = chroma(color).rgb()
+    const rgbStringWithSpaces = `rgb(${rgbArray[0]}, ${rgbArray[1]}, ${rgbArray[2]})`
+    return [
+      {
+        label: chroma(color).hex(),
+        description: 'Hex'
+      },{
+        label: chroma(color).css(),
+        description: 'RGB'
+      },{
+        label: rgbStringWithSpaces,
+        description: 'RGB with spaces'
+      },{
+        label: chroma(color).css('hsl'),
+        description: 'HSL'
+      }
+    ]
+  }
 
   static matchColor(color: string, userPalette: Array<string>) {
     let chromaColor: object;
